@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        // 연산자 - typeof
+        var age = 10;
+        var height = 180.34;
+        var username = "alice"
+        var sex = '여'
+        var isMarried = false;
+        var address; // undefined 저장될 것
+        var email = null; // 값 없음
+        var weight = NaN; // NaN (Not a Number)
+        
+        var phone = ["000-1111-2222","333-4444-5555"];
+        var pets = {"cat":"야옹이", "dog":"망치"};
+        var fun = function(){};
+        
+        console.log(age, typeof age);              //number
+        console.log(height, typeof height);        //number
+        console.log(username, typeof username);    //string
+        console.log(sex, typeof sex);              //string
+        console.log(isMarried, typeof isMarried);  //boolean
+        console.log(address, typeof address);      //undefined
+        console.log(email, typeof email);          //object null
+        console.log(weight, typeof weight);        //number
+        console.log(phone, typeof phone);          //object
+        console.log(pets, typeof pets);            //object
+        console.log(fun, typeof fun);              //function
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

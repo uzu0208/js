@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        //변수의 스코프 (scope) --> 변수를 인식할 수 있는 범위
+        //let a =300;
+        // 블럭({})을 가지고 있는 요소 : 함수,if문,반복문,class
+        if(true){
+            var n =10; let n2 =20;
+            console.log("블럭안", n);
+            console.log("블럭안", n2);
+          //  console.log("let a : ",a);
+        }
+        console.log("var블럭밖",n);
+        //console.log("let블럭밖",n2);
+        //console.log("let블럭밖",n2); 에러발생
+
+        function fun(){
+            var x=100;
+            let x2=200;
+            console.log("함수 블럭안", x);
+            console.log("함수 블럭안", x2);
+        }
+        //console.log("함수 블럭안", x);
+        //console.log("함수 블럭밖", x2); 에러
+        fun(); // 함수호출
+
+        //var 변수는 중복 선언이 가능하다
+        var n = 10;
+        var n =20;
+        //let 변수는 중복이 안된다
+        let z=20;
+        // let z=30;
+
+       // let c =[10,20,30];
+        //console.log("배열 : ",{c});
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

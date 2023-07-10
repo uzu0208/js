@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+    //template literal 사용 back-tick `
+    var n1 = 'hello';
+    var n2 = "hello";
+    var n3 = `hello`;
+    console.log(n1);
+    console.log(n2);
+    console.log(n3);
+
+    //back-tick의 장점 ==> 변수 삽입 가능
+    var name= "홍길동";
+    var age = 20;
+
+    var n = "이름 : "+name+", 나이 : "+age;
+    var n2 = `이름 : ${name}, 나이 : ${age}`;
+    
+    console.log(n);  // 이름:홍길동, 나이:20
+    console.log(n2); // 이름:홍길동, 나이:20
+        
+    //장점2 html태그 같은 특정 형식을 가진 문자열을 가독성이 높도록 표현 가능
+    //" " 쌍따옴표는 table같은거 잘못만듬 에러나기 쉬움
+    var n1 = "<table><tr><th>이름</th><th>나이</th></tr>";
+            n1+ " <tr><td>홍길동</td><td>20</td></table>"
+    var n2 = `<table>
+                    <tr>
+                      <th>이름</th>
+                      <th>나이</th>
+                    </tr>
+                    <tr>
+                       <td>홍길동</td>
+                       <td>20</td>
+                    </tr>
+                  </table>
+                       `;
+                       console.log(n1);
+                       console.log(n2);
+
+</script>
+</head>
+<body>
+</body>
+</html>

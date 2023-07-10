@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+   function li_print(){
+        var li_arr = document.querySelectorAll("li");
+        console.log(li_arr);
+        for(var li of li_arr){
+            console.log(li);
+        }
+   }
+</script>
+</head>
+<body>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+    <button onclick="li_print()">값출력</button>
+</body>
+</html>

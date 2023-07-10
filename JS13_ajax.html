@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+   var httpRequest = null; // 전역함수로 빼서 함수블럭에서도 사용가능
+   function req(){
+      // 자동 생성 X 생성해줘야 함
+      httpRequest = new XMLHttpRequest();
+      console.dir(httpRequest);
+      //응답시 처리하는 콜백함수
+      httpRequest.onreadystatechange=responseFun;
+      //요청정보 설정
+      var url = "https://reqres.in/api/users/2"
+      httpRequest.open("get", url , true);
+      //마지막 boolean값 true-비동기 false-동기 
+      //요청하기
+      httpRequest.send(null); //get방식이면 null지정
+   }
+   function responseFun(){
+      //요청이 성공인 경우에 처리 ==> readystate값 4 status 값 200
+      if(httpRequest.readyState == 4 && httpRequest.status == 200){
+         //서버에서 응답한 JSON 얻기
+         var str = httpRequest.responseText; //문자열로 받아서
+         var json = JSON.parse(str); //JSON으로 변경
+         console.log(json.data); //근데 객체임 ㄷㄷ 레전드
+         var data = json.data;
+
+         var id = data.id;
+         var email = data.email;
+         var first_name = data,first_name;
+         var last_name = data.last_name;
+         var avatar = data.avatar;
+         var table = ` 
+                <table>
+                    <tr>
+                        <th>아이디</th>
+                        <th>이름</th>
+                        <th>이메일</th>
+                        <th>아바타</th>
+                    </tr>
+                    <tr>
+                        <td>${id}</td>
+                        <td>${first_name}</td>
+                        <td>${email}</td>
+                        <td><img src="${avatar}" width="100" height="100"></td>
+                    </tr>
+                </table>
+                `;
+            document.querySelector("#result").innerHTML=table;
+      }
+   }
+</script>
+</head>
+<body>
+   <button onclick="req()">ajax요청</button>
+   <div id="result"></div>
+</body>
+</html>

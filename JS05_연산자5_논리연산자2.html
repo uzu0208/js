@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        // 연산자5 논리 연산자 --> 실행결과 논리값
+        // 논리값이 아니어도 논리연산자로 처리가 된다
+        console.log( ! 0); //true
+        console.log( ! ""); //true
+        console.log( ! null); //true
+        console.log( ! undefined); //true
+        console.log( ! NaN); //true
+        // ! 값 = true 니까 5개 다 false 라는 뜻
+
+        console.log( ! 10);
+        console.log( ! "Hello");
+
+        console.log( "hello" && 0); //값2인 0 false 
+        console.log( 0 && "hello"); //값1이 false니까 값1반환 
+
+        console.log( "hello" || 0); // 값1이 true --> 값1반환 
+        console.log( 0 || "hello"); // 값1이 false --> 값2반환
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

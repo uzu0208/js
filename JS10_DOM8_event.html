@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+    //DOM level 0의 고전방식 이벤트 처리
+    //document.querySelector(선택자).onXXX=익명함수;
+   function init(){
+    document.querySelector("#chk").onclick=function(){
+        var p = document.getElementById("xxx");
+            var p = document.querySelector("#xxx");
+            console.log(p);
+            p.innerText="World";
+            p.innerHTML="<h1>World</h1>";
+    }
+   }
+</script>
+</head>
+<body onload="init()">
+    <p id="xxx"><span>Hello</span></p>
+    <button id="chk">변경</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        // number 객체 : 수치데이터 관리
+        //1.생성방법
+        var n = new Number (10);
+        console.dir(n);
+        var n = 10; //권장
+
+        //2.property & method
+        console.log("1. 최대값 : ",Number.MAX_VALUE);
+        console.log("2. 최소값 : ",Number.MIN_VALUE);
+
+        console.log("3. 수치값을 문자열로 : ",n.toString(),typeof n.toString());
+        console.log("3. 수치값을 문자열로 : ",n.toString(2),n.toString(8),n.toString(16));
+
+        var n2 = 15.673;
+        console.log("4. 정수로(반올림) : ",n2.toFixed());
+        console.log("5. 정수로(소수점 2자리) : ",n2.toFixed(2));
+
+        console.log("6. 문자열을 정수로 : ",Number.parseInt("10"));
+        console.log("6. 문자열을 실수로 : ",Number.parseFloat("10.12"));
+
+        console.log("7. 정수냐 : ",Number.isInteger(n2));
+        console.log("8. NaN이냐 : ",Number.isNaN(NaN),Number.isNaN("Hello"));
+
+        var y = Number.MAX_VALUE;
+        console.log(y);
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

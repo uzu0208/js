@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        // array 객체 : 배열 데이터 관리
+        
+        //생성방법
+        var arr = new Array(10,20,30);
+        console.log(arr);
+        var arr = [10,20,30]; //권장
+        console.log(arr);
+
+        //값 출력
+        //1. index 개별로 지정
+        console.log(arr[0],arr[1],arr[2]);
+        //2. for
+        for(var idx=0;idx<arr.length;idx++){
+            console.log(arr[idx]);
+        }
+        //3. for-of = 실제값을 반복해서 조회
+        for(var n of arr){
+            console.log(n);
+        }
+        //3. for-in = index값을 반복해서 조회
+        for(var n in arr){
+            console.log(n);
+        }
+
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

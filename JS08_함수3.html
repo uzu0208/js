@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        
+        //즉시실행함수 --> 정의하면서 동시에 호출
+        //함수 선언식
+        (function fun (){
+            console.log("fun");
+        }());
+        //함수 표현식
+        (function (){
+            console.log("fun");
+        }()); // 일회성 
+        
+        //call-back 함수
+        /* 콜백 함수는 사용자가 호출하지 않고 특정
+        순간에 시스템이 호출하는 함수를 의미한다 
+        이벤트에서 많이 사용됨 = trigger
+        */
+       
+        function a(n){
+            n();
+        }
+        function b(){   //call back 함수 : 시스템이 호출
+            console.log("callback");
+        }
+        a(b); //--> a(b); 시스템이 호출하는 함수명을 전달해야 함
+
+        //Parameter X return X
+        var fun = function (){
+            console.log("함수 표현식 : fun");
+        };
+        //arrow 함수    
+        var fun = ()=>{console.log("arrow 함수 표현식 : fun")};
+        fun();
+        //Parameter O return X
+        var fun2 = function (n){
+            console.log("함수 표현식 fun2", n);
+        };
+        //arrow
+        var fun2 = n => {console.log("arrow 함수 표현식 fun2", n);}
+        fun2(10);
+        //
+        var fun3 = (n,n2)=>{
+            console.log("함수 표현식 fun3", n,n2);
+        };
+        fun3(4,6);
+        //Par O ret O
+        var fun4 = function (n,n2){
+            return n+n2;
+        }
+        //arrow
+        var fun4 = (n,n2)=>n+n2;
+        var result = fun4(10,20);
+        console.log(result);
+        //활용
+        var arr = [6,2,8,5,1,7,9];
+        arr.sort();
+        console.log(arr); //오름차순
+
+        arr.sort(function(a,b){return b-a});
+        console.log(arr); //내림차순
+        arr.sort((a,b)=>b-a); //arrow
+        console.log(arr);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

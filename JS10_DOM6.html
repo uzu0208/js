@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+   
+   function choice(){
+      var checkbox = document.querySelector("#same_address");
+      console.dir(checkbox);
+      if(checkbox.checked){
+         document.querySelector("#output").value = document.querySelector("#addr").value;
+      }
+      else{
+         document.querySelector("#output").value="";
+      }
+   }
+      
+</script>
+</head>
+<body>
+   회원주소: <input type="text" value="서울시 서초구" id="addr"><br>
+   배송지주소와 동일하면 체크하시오.
+   <input type="checkbox" onclick="choice()" id="same_address">
+   <hr>
+   배송지 주소: <input type="text" id="output">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+    function init(){
+        var p = document.querySelector("p");
+        console.dir(p);
+        //값 얻기
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+        //값 변경
+        p.innerText="World";
+        p.innerHTML="<h1>World</h1>";
+    }
+</script>
+</head>
+<body onload="init()">
+    <p><span>Hello</span></p>
+
+</body>
+</html>

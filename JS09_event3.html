@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+    /* 일반적으로 많이 쓰는 이벤트 타입 ==> 이벤트 핸들러
+    <button><checkbox> : click ==> onclock 
+    <form> : submit ==> onsubmit
+    <input> : keyup ==> onkeyup
+    <select> : change ==> onchange
+    <img> : mouseover(갖다대면 커짐) mouseout ==> on + xxx
+    */
+   //시스템이 호출
+   //<body> : load 이벤트 (DOM 트리가 완성될떄) ==> onload
+    function fun(){
+        console.log("fun",event);
+    }
+
+    </script>
+</head>
+<body onload="fun()">
+    
+</body>
+</html>

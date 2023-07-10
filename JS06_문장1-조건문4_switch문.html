@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var num = 10;
+        switch (num) {
+            //switch-case문만 확인하기 때문에 5는 안나옴
+            case 5:console.log("5"); break;
+            case 10:console.log("10"); break;
+            case 15:console.log("15"); break;
+            default : console.log("default");
+        }
+        console.log("end");
+   
+        var num = 10;
+        switch (num) {
+            //break가 없어서 default까지 간 모습
+            case 5:console.log("5"); 
+            case 10:console.log("10"); 
+            case 15:console.log("15");
+            default : console.log("default");
+        }
+        console.log("end");
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

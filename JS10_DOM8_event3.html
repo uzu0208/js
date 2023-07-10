@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+    //DOM level 0의 고전방식 이벤트 처리
+    //document.querySelector(선택자).onXXX=익명함수;
+    var xxx = function(){
+        console.log("button");
+    };
+   function init(){
+    document.querySelector("#chk").onclick=xxx; // 콜백함수로 처리 ()가 없으니까 시스템이 호출한 것
+   }
+</script>
+</head>
+<body onload="init()">
+    <button id="chk">변경</button>
+</body>
+</html>

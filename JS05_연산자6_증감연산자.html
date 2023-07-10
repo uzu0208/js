@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        //증감연산자
+
+        //전치
+        var n = 5;
+        ++n; // n + 1 =n
+        console.log("전치 : ",n);
+
+        //후치
+        var n = 5;
+        n++; // n = n + 1
+        console.log("후치 : ",n);
+        // 독자적일 때는 값이 같음. 중간과정 할당이 없기때문
+        
+        //주의할 점
+        var n = 5;
+        var x = ++n; // n + 1 =n
+        console.log("전치 : ",n , x);
+        var n = 5;
+        var x = n++; // n = n + 1
+        console.log("후치 : ",n, x);
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

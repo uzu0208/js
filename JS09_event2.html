@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+    /* 일반적으로 많이 쓰는 이벤트 타입 ==> 이벤트 핸들러
+    <button><checkbox> : click ==> onclock 
+    <form> : submit ==> onsubmit
+    <input> : keyup ==> onkeyup
+    <select> : change ==> onchange
+    <img> : mouseover(갖다대면 커짐) mouseout ==> on + xxx
+    */
+    function fun(){
+        console.log("fun",event);
+        console.dir(event);
+        
+        event.preventDefault(); // 서브밋 방지
+    }
+    function xxx(){
+        console.log("XXX");
+    }
+    function yyy(){
+        console.log("YYY");
+        event.stopPropagation();
+    }
+    
+    
+    </script>
+</head>
+<body>
+    <h2>자동 서브밋 방지</h2>
+    <form action="target.html" method="get" onsubmit="fun()">
+        나이:<input type="text" name="age"><br>
+       
+        <input type="submit"  value="전송">
+    </form>
+
+    <h2>이벤트 전파 방지</h2>
+  <div style="background: yellow;" onclick="xxx()"> 
+     xxx
+     <div style="background-color: blue;" onclick="yyy()">
+      yyy
+     </div>
+  </div>
+    
+</body>
+</html>

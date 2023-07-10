@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        // boolean 객체 : 논리 데이터 관리
+        
+        //생성방법
+
+        //false로 처리되는 data
+        var n = new Boolean(0);
+        var n = new Boolean("");
+        var n = new Boolean(null);
+        var n = new Boolean(undefined);
+        var n = new Boolean(NaN);
+        console.log(n); //Boolean
+        console.log(n.toString()); //문자열 "false"
+        console.log(n.valueOf()); //값 자체 false
+ 
+        if(n.toString()){ // 문자열 false --> 논리값 true로 처리됨
+            console.log("거짓1");
+        }
+        if(n.valueOf()){ // 논리값 false --> 실행도 안함
+            console.log("거짓2");
+        }
+
+        //true로 처리되는 data
+        var n = new Boolean(1);
+        var n = new Boolean("a");
+        console.log(n.toString()); //문자열 "false"
+        console.log(n.valueOf()); //값 자체 false
+
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>

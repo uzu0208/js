@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+   function get_age(){
+        var age_input = document.querySelector("#age");
+        console.dir(age_input);
+        console.log(age_input.value);
+
+        var result = document.querySelector("#result");
+        console.dir(result);
+        result.innerText=age_input.value;
+   }
+</script>
+</head>
+<body>
+   나이 : <input type="text" id="age"><br>
+   <button onclick="get_age()">나이출력</button><br>
+   입력나이출력 : <div id="result">0</div>
+</body>
+</html>

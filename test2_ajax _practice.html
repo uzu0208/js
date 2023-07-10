@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<script>
+  var httpsRequest = null;
+  function req(){
+   httpsRequest = new XMLHttpRequest();
+   httpsRequest.onreadystatechange= fun;
+   var url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=3d430a039fb1bae3fe5f0bc48df64e46&targetDt="
+   url=url+document.querySelector("#searchdate").value;
+   httpsRequest.open("get",url,true);
+   httpsRequest.send(null);
+   console.dir(httpsRequest);
+  }
+   function fun(){
+      if(httpsRequest.readyState == 4 && httpsRequest.status == 200){
+         var str = httpsRequest.responseText;
+         var json = JSON.parse(str);
+         var data = json.boxOfficeResult.dailyBoxOfficeList;
+         console.dir(data);
+         
+var ranks = []; // 빈 배열 선언
+var titles = [];
+var dates = [];
+
+for (i = 0; i < 10; i++) {
+  var want = data[i];
+  var rank = want.rank;
+  ranks.push(rank); // 배열에 rank 값을 추가
+  var title = want.movieNm;
+  titles.push(title);
+  var date = want.openDt;
+  dates.push(date);
+}
+   var table = `
+<table>
+   <tr>
+      <th>순위</th>
+      <th>제목</th>
+      <th>개봉일</th>
+   </tr>
+`;
+for(var j=0; j<10 ; j++ ){
+table+=`
+   <tr>
+      <td>${ranks[j]}</td>
+      <td>${titles[j]}</td>
+      <td>${dates[j]}</td>
+   </tr>`;
+}
+table+=`</table>`;
+   
+
+   document.querySelector("#result").innerHTML=table;
+   }
+}
+</script>
+</head>
+
+<body>
+   날짜 : <input type="text" id="searchdate" >
+   <button onclick="req()">ajax요청</button>
+   <div id="result"></div>
+</body>
+</html>

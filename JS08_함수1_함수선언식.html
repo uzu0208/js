@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        //함수 function
+        
+        //1. 함수 선언식 (이름있음)
+
+        console.log("1");
+        //parameter X return값 X
+        function fun(){
+            console.log("fun");
+        } // 함수를 실행하려면 호출이 필요함
+        fun();
+        //parameter O return값 X
+        function fun2(n,n2){
+            console.log("fun2",n,n2);
+        } 
+        //호출 시 갯수(argument list)가 달라도 가능
+        fun2(10,"AAA"); // 인자값에 모든 데이터종류 가능
+        fun2(); // fun2 undefined undefined 
+        fun2(20,"AAA",100,200); //fun2 20 AAA 그외는 저장할 공간없어서 스킵
+
+        //parameter X return value O
+        function fun3(){
+            console.log("fun3");
+            return 100;
+        } // return 값은 반드시 하나만 사용 가능
+        //인자값은 여러 개 전송 가능하지만 return값은 하나만 전송가능. 
+        //만약 여러값을 리턴하고 싶으면 배열에 저장해서 리턴 할 것.
+        var result = fun3(); //return value를 저장하기 위한 변수(result)
+        console.log(result);
+
+        //parameter O return value O
+        function fun4(n,n2){
+            console.log("fun4",n,n2);
+            return n+n2;
+        }
+        var result = fun4(10,20);
+        console.log(result);
+
+        console.log("end");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

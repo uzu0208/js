@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        //함수 function
+
+        //default 파라미터 : undefined 방지
+        function fun2(n=1,n2=2){
+            console.log("fun2",n,n2);
+        } //undefined 대신 초기화된 기본값이 나옴
+        fun2(10,"AAA");
+        fun2();
+        fun2(20);
+        //가변인자 (...변수)
+        function fun3(n,n2,...n3){
+            console.log("fun3",n,n2,n3);
+        }
+        fun3(10,20,30);
+        fun3(10,20,30,40,50,60);
+        //혼합 default parameter + 가변인자
+        function fun4(n,n2=0,...n3){
+            console.log("fun4",n,n2,n3.toString());
+        }
+        fun4(10);
+        fun4(10,20,30);
+        fun4(10,20,30,40,50,60);
+
+    </script>
+</head>
+<body>
+</body>
+</html>

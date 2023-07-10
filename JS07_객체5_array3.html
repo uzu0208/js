@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        var arr=[6,2,8,5,1,7,9];
+        console.log(arr.toString()); // 6 2 8 5 1 7 9
+
+        arr.reverse();
+        console.log(arr.toString()); // 9 7 1 5 8 2 6
+
+        //새로운 배열 반환
+        var arr2 = arr.slice(0,4); // 0~4까지 떼어냄 
+        console.log(arr.toString());
+        console.log(arr2.toString()); 
+
+        //특정값 위치값 반환
+        console.log(arr.indexOf(9)); //0
+        console.log(arr.indexOf(10)); //-1(없음)
+
+        //정렬
+        var arr=[6,2,8,5,1,7,9];
+        arr.sort();
+        console.log(arr.toString()); //1,2,5,6,7,8,9 오름차순(기본)
+
+        var arr=[16,25,8,75,91,17,9];
+       // arr.sort();
+       // console.log(arr.toString()); 
+        //16,17,25,75,8,9,91 앞자리만 비교함
+        //이럴 경우 함수를 적용해야 함
+        arr.sort(function(a, b){return a-b}); //오름차순 8,9,16,17,25,75,91
+        arr.sort(function(a, b){return b-a}); //내림차순 91,75,25,17,16,9,8
+        console.log(arr.toString()); 
+
+        // "홍길동/이순신/유관순" --> ['홍길동','이순신','유관순'] s.split("/");
+        // ['홍길동','이순신','유관순'] --> "홍길동/이순신/유관순" arr.join("/");
+
+        var arr = ['홍길동','이순신','유관순'];
+        var s = arr.join(); //홍길동,이순신,유관순
+        console.log(s.toString()); //join()안에 아무것도 안주면 단어사이 ,(기본)
+        var s = arr.join("/");
+        console.log(s.toString()); //홍길동/이순신/유관순
+        var s = arr.join(" and ");
+        console.log(s.toString()); //홍길동 and 이순신 and 유관순
+
+        //배열 채우기
+        var arr=[6,2,8,5,1,7,9];
+        arr.fill(100); // 원본도 변경됨
+        console.log(arr.toString()); //100,100,100,100,100,100,100
+        arr.fill(90,1,4); // 대부분 end는 포함 안됨
+        console.log(arr.toString()); //100,90,90,90,100,100,100
+    </script>
+</head>
+<body>
+    <p>안녕</p>
+</body>
+</html>
